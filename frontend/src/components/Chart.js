@@ -26,13 +26,16 @@ const formatAgeRange = (age) => {
 const Chart = ({ type, data, title }) => {
   if (type === "bar") {
     return (
-      <BarChart width={300} height={200} data={data} title={title}>
+      <BarChart width={300} height={200} data={data} title={title} >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis
-          dataKey="age"
+
+        <XAxis 
+          dataKey="age" 
+          label={{ value: 'Age', position: 'bottom' }} 
           tickFormatter={formatAgeRange} // Format age into ranges
         />
-        <YAxis />
+        <YAxis label={{ value: 'Risk', angle: -90, position: 'insideLeft' }} />
+
         <Tooltip />
         <Legend />
         <Bar dataKey="risk" fill="#8884d8"/>
