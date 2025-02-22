@@ -3,7 +3,7 @@ import Chart from "./Chart";
 
 const DashboardCharts = ({ chartData }) => {
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
+    <div>
       {/* Render charts */}
       <Chart type="bar" data={chartData} />
       <Chart type="bar" data={chartData} />

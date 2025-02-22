@@ -25,15 +25,16 @@ const App = () => {
   ];
 
   return (
-    <div style={{ display: "grid", gridTemplateColumns: "40% 60%", gap: "10px", padding: "20px" }}>
+    <div className="h-full">
       {/* Left Section */}
-      <div>
+      <div className="w-1/2 p-4">
         <InputForm onInputChange={handleInputChange} />
         <LikelihoodDisplay likelihood={likelihood} />
       </div>
 
       {/* Right Section */}
-      <DashboardCharts chartData={chartData} />
+      <div className="">      <DashboardCharts chartData={chartData} />
+      </div>
     </div>
   );
 };
