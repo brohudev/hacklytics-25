@@ -1,11 +1,41 @@
 import React from "react";
-import { BarChart, Bar, PieChart, Pie, Cell } from "recharts";
+import {
+  BarChart,
+  Bar,
+  PieChart,
+  Pie,
+  Cell,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  Label,
+} from "recharts";
 
-const Chart = ({ type, data }) => {
+// Helper function to create age ranges
+const formatAgeRange = (age) => {
+  if (age >= 0 && age <= 18) return "0-18";
+  if (age >= 19 && age <= 25) return "19-25";
+  if (age >= 26 && age <= 35) return "26-35";
+  if (age >= 36 && age <= 45) return "36-45";
+  if (age >= 46 && age <= 60) return "46-60";
+  return "60+"; // For ages above 60
+};
+
+const Chart = ({ type, data, title }) => {
   if (type === "bar") {
     return (
-      <BarChart width={300} height={200} data={data}>
-        <Bar dataKey="value" fill="#8884d8" />
+      <BarChart width={300} height={200} data={data} title={title}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis
+          dataKey="age"
+          tickFormatter={formatAgeRange} // Format age into ranges
+        />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="risk" fill="#8884d8"/>
       </BarChart>
     );
   }

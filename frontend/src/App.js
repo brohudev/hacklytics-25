@@ -24,6 +24,14 @@ const App = () => {
     { name: "Grade", value: Math.random() * 100 },
   ];
 
+  const newData = [
+    { age: 18, risk: 0.2 },
+    { age: 24, risk: 0.3 },
+    { age: 35, risk: 0.5 },
+    { age: 45, risk: 0.4 },
+    { age: 60, risk: 0.7 }
+  ];
+
   return (
     <div style={{ display: "grid", gridTemplateColumns: "40% 60%", gap: "10px", padding: "20px" }}>
       {/* Left Section */}
@@ -33,7 +41,7 @@ const App = () => {
       </div>
 
       {/* Right Section */}
-      <DashboardCharts chartData={chartData} />
+      <DashboardCharts chartData={newData} pieData={chartData} title="Risk vs Age Chart"/>
     </div>
   );
 };
