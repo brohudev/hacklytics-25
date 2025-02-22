@@ -24,6 +24,14 @@ const App = () => {
     { name: "Grade", value: Math.random() * 100 },
   ];
 
+  const newData = [
+    { age: 18, risk: 0.2 },
+    { age: 24, risk: 0.3 },
+    { age: 35, risk: 0.5 },
+    { age: 45, risk: 0.4 },
+    { age: 60, risk: 0.7 }
+  ];
+
   return (
     <div className="h-full">
       {/* Left Section */}
@@ -33,8 +41,7 @@ const App = () => {
       </div>
 
       {/* Right Section */}
-      <div className="">      <DashboardCharts chartData={chartData} />
-      </div>
+      <DashboardCharts chartData={newData} pieData={chartData} title="Risk vs Age Chart"/>
     </div>
   );
 };
