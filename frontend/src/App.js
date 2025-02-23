@@ -15,7 +15,7 @@ export const App = () => {
 
       {/* Right Section - Charts */}
       <div className="right-section">
-      <DashboardCharts className="chart" title="Risk vs Age Chart"/>
+        <DashboardCharts title="Risk vs Age Chart"/>
       </div>
     </div>
   );

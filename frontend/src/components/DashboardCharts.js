@@ -20,10 +20,12 @@ const DashboardCharts = ({ title }) => {
   return (
     <>
       {/* Render charts */}
-      <Chart className="chart" type="bar" data={newData} title={title}/>
-      <Chart className="chart" type="bar" data={newData} title={title}/>
-      <Chart className="chart" type="pie" data={chartData} title={title}/>
-      <Chart className="chart" type="bar" data={newData} title={title}/>
+      <div className="grid"> 
+        <Chart className="chart" type="bar" data={newData} title={title}/>
+        <Chart className="chart" type="bar" data={newData} title={title}/>
+        <Chart className="chart" type="pie" data={chartData} title={title}/>
+        <Chart className="chart" type="bar" data={newData} title={title}/>
+      </div>
     </>
   );
 };
