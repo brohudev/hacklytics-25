@@ -10,7 +10,6 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  Label,
 } from "recharts";
 
 // Helper function to create age ranges
