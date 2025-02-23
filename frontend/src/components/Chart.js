@@ -26,7 +26,7 @@ const formatAgeRange = (age) => {
 const Chart = ({ type, data, title }) => {
   if (type === "bar") {
     return (
-      <BarChart width={300} height={200} data={data} title={title}>
+      <BarChart width={300} height={200} data={data} title={title} >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis 
           dataKey="age" 
