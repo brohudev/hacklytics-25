@@ -28,10 +28,13 @@ const Chart = ({ type, data, title }) => {
     return (
       <BarChart width={300} height={200} data={data} title={title}>
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis
-          dataKey="age"
+        <XAxis 
+          dataKey="age" 
+          label={{ value: 'Age', position: 'bottom' }} 
           tickFormatter={formatAgeRange} // Format age into ranges
         />
+        <YAxis label={{ value: 'Risk', angle: -90, position: 'insideLeft' }} />
+
         <YAxis />
         <Tooltip />
         <Legend />
