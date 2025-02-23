@@ -14,11 +14,24 @@ with open("model.pkl", "rb") as f:
 def predict():
     try:
         data = request.json
+
+        # Ensure "features" exist
         if "features" not in data:
             return jsonify({"error": "Missing 'features' in request"}), 400
-        input_features = np.array(data["features"]).reshape(1, -1)
+
+        for i, value in enumerate(data["features"]):
+            if value == "" or value is None:
+                return jsonify({"error": f"Feature at index {i} is empty"}), 400
+
+        input_features = np.array(data["features"], dtype=float).reshape(1, -1)
+
+        # Make prediction
         prediction = model.predict(input_features)
+
         return jsonify({"predicted_y": prediction.tolist()})
+
+    except ValueError as e:
+        return jsonify({"error": f"Invalid input: {str(e)}"}), 400
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 

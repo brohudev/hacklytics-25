@@ -36,7 +36,7 @@ const LeftSection = () => {
       const formattedData = {
           ...formData,
           Age: Number(formData.Age),
-          Gender: formData.Gender === "male" ? 1 : 0,
+          Gender: formData.Gender === "male" ? 0 : 1,
           Protein1: parseFloat(formData.Protein1),
           Protein2: parseFloat(formData.Protein2),
           Protein3: parseFloat(formData.Protein3),

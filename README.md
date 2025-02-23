@@ -1,36 +1,24 @@
-# 🐾 Purrfect Odds (Working Title)
+## 📖 Project Overview: BayeSurgeon
 
-Welcome to **Purrfect Odds**, a hackathon project that combines NFL betting data with player performance, injury, and other datasets to calculate the **chance of hitting a spread**. This project is powered by Python (Flask), MongoDB, and React.js, and it’s all tied together with some cat-tastic vibes 🐱.
-
----
-
-## 📖 Project Overview
-
-**Purrfect Odds** is designed to:
-1. Fetch **NFL betting data** (spreads, odds) from a sportsbook API.
-2. Process datasets like **injury reports**, **player performance**, and more.
-3. Calculate a **weighted score** that predicts the likelihood of hitting a spread.
-4. Display everything in a clean and responsive web interface.
+Welcome to **BayeSurgeon**, a hackathon project on Breath Cancer Prediction and Dataset Visualization that combines age, gender, surgeon type, and other professional factors to predict the **chances of survivial** based on patients' health data. We aim to make clinicians' life easier! By providing a data-driven prediction of the patient's status, clinical strategies can be improved and optimized. This project is powered by Python (Flask), React.js, and Machine Learing Strategies, and it’s all tied together with some cat-tastic vibes 🐱.
 
 ---
+
 
 ## 🛠️ Tech Stack
 
-- **Backend**: Flask (Python) + MongoDB for storing and processing data.
+- **Backend**: Flask (Python) for handling API call and model predictions.
 - **Frontend**: React.js with Tailwind CSS for styling.
-- **APIs**: Sportsbook API for betting data, plus external APIs for player stats and injuries.
+- **Machine Learning Model**: Support Vector Machine trained on BRCA data.
 
 ---
 
 ## 🚀 Features
 
-- 🏈 Fetch real-time spreads and odds for NFL games.
-- 📊 Calculate weighted scores based on datasets like:
-  - Player injuries
-  - Performance stats
-  - Team strategy
-  - Nutrition/health data
-- 💻 User-friendly interface to display spreads, odds, and confidence scores.
+- 📊 Calculate patients'chance of survival based on data like:
+  - Age, Gender
+  - Surgeon Type, Tumor Stage
+- 💻 User-friendly interface to display correlation of breast cancer survival rates and related factors based on BRCA dataset.
 
 ---
 
@@ -42,19 +30,10 @@ Here’s how the project is organized:
 project/
 ├── backend/
 │   ├── app.py                  # Main Flask app
-│   ├── services/
-│   │   ├── api_handler.py      # Handles external API calls
-│   │   ├── db_handler.py       # Handles database interactions
-│   │   ├── score_calculator.py # Implements weighted score logic
-│   ├── models/
-│   │   ├── game_model.py       # Database schema for games
-│   │   ├── player_model.py     # Database schema for players
-│   ├── config/
-│       ├── settings.py         # Configuration settings (API keys, DB URI)
+│   ├── model.pkl               # Trained Machine Learning Model on the Breast Cancer Dataset
 ├── frontend/
 │   ├── src/
-│   │   ├── components/         # React components (GameCard, GameList, etc.)
-│   │   ├── hooks/              # Custom hooks for API calls
+│   │   ├── components/         # React components (Input Form, Dashboard Charts, etc.) && POST call to the trained model
 │       App.js                  # Main app entry point
 ```
 
@@ -121,8 +100,6 @@ The app will be available at `http://localhost:3000`.
 
 ## 🧪 Testing
 
-### Backend Tests:
-- Use `pytest` to test individual services like `api_handler` and `score_calculator`.
 
 ### Frontend Tests:
 - Use Jest and React Testing Library for unit testing components.
@@ -143,6 +120,7 @@ Here are some next steps we’d love to tackle:
 
 We’re a group of four hackathon enthusiasts who love cats and code!  
 Feel free to reach out if you have questions or want to collaborate! 😺
+Check our Devpost: https://devpost.com/software/breast-cancer-dashboard
 
 ---
 
