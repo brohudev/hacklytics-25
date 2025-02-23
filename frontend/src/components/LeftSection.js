@@ -4,8 +4,7 @@ import '../styles.css';
 const LeftSection = () => {
   return (<div className="left-section">
        {renderInputForm()}
-
-{/* Likelihood Section */}
+       {/* Likelihood Section */}
        {displaySurvivalLikelihood()}
 </div>);
 }
@@ -28,7 +27,7 @@ function displaySurvivalLikelihood() {
           textColor = 'red';
      }
 
-     return <div className="likelihood" style={{ backgroundColor, color: textColor }}>
+     return <div className="likelihood" style={{ backgroundColor, color: textColor}}>
           Likelihood of Survival: {likelihood}%
      </div>;
 }

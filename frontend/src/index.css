@@ -17,11 +17,15 @@ body {
   background-color: #f4f4f4;
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 
 .input-form {
-  flex: 1; /* Takes up the top part */
-  padding: 20px;
+  /* flex: 1; /* Takes up the top part */ 
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Consistent spacing between fields */
+  width: 100%; /* Ensures uniform width */
 }
 
 .input-form h2 {
@@ -35,17 +39,24 @@ body {
 
 .input-form input,
 .input-form select {
-  width: calc(100% - 10px);
-  padding: 5px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .likelihood {
   height: 20%; /* Bottom part */
+  width: 75%;
   background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.5rem;
+  box-sizing: border-box;
+  border: #333 4px solid;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px;
+  box-sizing: border-box;
 }
 
 /* Right Section */
