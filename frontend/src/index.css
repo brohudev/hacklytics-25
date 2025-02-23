@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;/* styles.css */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -33,7 +34,8 @@ body {
 }
 
 .input-form label {
-  display: block;
+  display: inline-flex;
+  flex-direction: row;
   margin-bottom: 10px;
 }
 
@@ -70,9 +72,9 @@ body {
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 80px; /* Horizontal gap between items */
-  row-gap: 80px; /* Vertical gap between items */
-  padding:100px;
+  column-gap: 100px; /* Horizontal gap between items */
+  row-gap: 100px; /* Vertical gap between items */
+  padding: 50px;
 }
 
 .chart {

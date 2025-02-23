@@ -17,14 +17,40 @@ const DashboardCharts = ({ title }) => {
     { age: 45, risk: 0.4 },
     { age: 60, risk: 0.7 }
   ];
+
+  const tumourData = [
+    { name: "Stage 1", value: 0.192 },
+    { name: "Stage 2", value: 0.566 },
+    { name: "Stage 3", value: 0.242 }
+  ];
+
+  /* dead = 0, alive = 1 */
+  const statusAD = [
+    {name: "Dead", value: 0.206 },
+    {name: "Alive", value: 0.794 }
+  ];
+
+  const surgeryData = [
+    { stage: "Stage 1", ModifiedRadicalMastectomy: .125, Lumpectomy: .344, SimpleMastectomy: .219, Other: .312 },
+    { stage: "Stage 2", ModifiedRadicalMastectomy: .259, Lumpectomy: .19, SimpleMastectomy: .228, Other: .323 },
+    { stage: "Stage 3", ModifiedRadicalMastectomy: .481, Lumpectomy: .099, SimpleMastectomy: .123, Other: .296 },
+  ];
+
+  const surgeryTypeDeadAlive = [
+    { surgery: "Lumpectomy", Dead: .136, Alive: .864 },
+    { surgery: "SimpleMastectomy", Dead: .255, Alive: .745 },
+    { surgery: "RadicalMastectomy", Dead: .217, Alive: .783 },
+    { surgery: "Other", Dead: .185, Alive: .815 },
+  ];
+
   return (
     <>
       {/* Render charts */}
       <div className="grid"> 
-        <Chart className="chart" type="bar" data={newData} title={title}/>
-        <Chart className="chart" type="bar" data={newData} title={title}/>
-        <Chart className="chart" type="pie" data={chartData} title={title}/>
-        <Chart className="chart" type="bar" data={newData} title={title}/>
+        <Chart className="chart" type="bar2" data={surgeryData} title={title}/>
+        <Chart className="chart" type="pie2" data={statusAD} title={title}/>
+        <Chart className="chart" type="pie" data={tumourData} title={title}/>
+        <Chart className="chart" type="bar3" data={surgeryTypeDeadAlive} title={title}/>
       </div>
     </>
   );

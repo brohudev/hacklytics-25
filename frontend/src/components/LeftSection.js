@@ -79,11 +79,11 @@ export default LeftSection;
 function displaySurvivalLikelihood(prediction) {
      let backgroundColor = '';
      let textColor = '';
-
-     if (prediction[0] === 'Alive') {
+     const predictionText = Array.isArray(prediction) ? prediction[0] : prediction;
+     if (predictionText === 'Alive') {
           backgroundColor = 'lightgreen';
           textColor = 'green';
-     } else if (prediction[0] === "Dead") {
+     } else if (predictionText === "Dead") {
           backgroundColor = 'lightcoral';
           textColor = 'red';
      } else {

@@ -42,13 +42,51 @@ const Chart = ({ type, data, title }) => {
     );
   }
 
+  if (type === "bar2") {
+    return (
+      <div>
+      <h1>Surgery Type Percentages Across Stages</h1>
+      <BarChart width={700} height={400} data={data}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="stage" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="Lumpectomy" fill="#82ca9d" />
+        <Bar dataKey="SimpleMastectomy" fill="#ffc658" />
+        <Bar dataKey="ModifiedRadicalMastectomy" fill="#8884d8" />
+        <Bar dataKey="Other" fill="#ff7300" />
+      </BarChart>
+      </div>
+    );
+  }
+
+  if (type === "bar3") {
+    return (
+      <div>
+      <h1>Surgery Type and Survival Outcome</h1>
+      <BarChart width={700} height={400} data={data}>
+        <CartesianGrid strokeDasharray="3 3" />
+        <XAxis dataKey="surgery" />
+        <YAxis />
+        <Tooltip />
+        <Legend />
+        <Bar dataKey="Dead" fill="#8884d8" />
+        <Bar dataKey="Alive" fill="#82ca9d" />
+      </BarChart>
+      </div>
+    );
+  }
+
   if (type === "pie") {
     return (
-      <PieChart width={400} height={300}>
+      <div>
+      <h1>Tumour Stage Distribution</h1>
+      <PieChart width={700} height={400}>
         <Pie
           data={data}
           dataKey="value"
-          outerRadius={80}
+          outerRadius={150}
           fill="#82ca9d"
           label={(entry) => entry.name}
         >
@@ -57,6 +95,28 @@ const Chart = ({ type, data, title }) => {
           ))}
         </Pie>
       </PieChart>
+      </div>
+    );
+  }
+
+  if (type === "pie2") {
+    return (
+      <div>
+      <h1>Survival Percentage</h1>
+      <PieChart width={700} height={400}>
+        <Pie
+          data={data}
+          dataKey="value"
+          outerRadius={150}
+          fill="#82ca9d"
+          label={(entry) => entry.name}
+        >
+          {data.map((entry, index) => (
+            <Cell key={`cell-${index}`} fill={["#0088FE", "#00C49F", "#FFBB28", "#FF8042"][index]} />
+          ))}
+        </Pie>
+      </PieChart>
+      </div>
     );
   }
 
